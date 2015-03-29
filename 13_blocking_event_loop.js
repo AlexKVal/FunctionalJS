@@ -4,11 +4,7 @@ module.exports = function repeat(operation, num) {
 
   operation()
 
-  if(num % 100 === 0) {
-    setTimeout(function () {
-      repeat(operation, --num)
-    })
-  } else {
+  setImmediate(function () {
     repeat(operation, --num)
-  }
+  })
 }
